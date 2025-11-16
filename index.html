@@ -151,39 +151,26 @@
       font-size:15px;
     }
 
-    header.header{
-      background:rgba(255,255,255,.92);
-      border-bottom:1px solid #e5e7eb;
-      position:sticky;top:0;z-index:100;
-      backdrop-filter:saturate(180%) blur(10px);
-    }
+    /* Header 基礎樣式（header.html 會用到同一組 class） */
+    header.header{background:linear-gradient(180deg,#fff 0%,#f3f5f7 100%);border-bottom:1px solid #e5e7eb;position:sticky;top:0;z-index:100;backdrop-filter:saturate(180%) blur(6px)}
     .nav{display:flex;align-items:center;justify-content:space-between;height:64px;position:relative}
-    .brand-link{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-weight:800}
-    .brand-logo{
-      width:34px;height:34px;border-radius:10px;
-      display:grid;place-items:center;
-      background:var(--brand);color:#fff;font-weight:900;
-      box-shadow:0 6px 16px rgba(15,118,110,.4);
-    }
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-weight:800}
+    .logo{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;background:#115e59;color:#fff;font-weight:900}
     .menu{display:flex;gap:22px;align-items:center}
-    .menu>li{list-style:none;position:relative}
-    .menu>li>a{text-decoration:none;color:var(--text);font-weight:700;padding:8px 2px;display:inline-block}
-    .menu>li>a:hover{color:var(--brand-soft)}
-    .menu>li>a:focus{outline:2px solid var(--brand-soft);outline-offset:3px}
-    .hamburger{
-      display:none;background:var(--brand);color:#fff;border:0;
-      border-radius:999px;padding:7px 13px;font-weight:800;font-size:13px;
-    }
+    .menu > li{list-style:none;position:relative}
+    .menu > li > a{text-decoration:none;color:var(--text);font-weight:700;padding:8px 2px;display:inline-block}
+    .menu > li > a:hover{color:var(--brand)}
+    .menu > li > a:focus{outline:2px solid var(--brand);outline-offset:3px}
+    .submenu{display:none;position:absolute;top:100%;left:0;background:#fff;border:1px solid #e5e7eb;border-radius:12px;min-width:180px;box-shadow:0 10px 25px rgba(0,0,0,.12);padding:6px 0;z-index:50}
+    .submenu a{display:block;padding:12px 16px;text-decoration:none;color:var(--text);font-weight:600}
+    .submenu a:hover,.submenu a:focus{background:var(--brand);color:#fff;outline:none}
+    .menu > li:hover .submenu{display:block}
+    .hamburger{display:none;background:#115e59;color:#fff;border:0;border-radius:10px;padding:8px 12px;font-weight:800}
     @media (max-width:900px){
-      .menu{
-        display:none;position:absolute;right:20px;top:64px;
-        background:#fff;border:1px solid #e5e7eb;border-radius:16px;
-        flex-direction:column;gap:0;width:min(88vw,320px);
-        box-shadow:0 16px 40px rgba(15,23,42,.35);padding:8px 0;
-      }
-      .menu.open{display:flex}
-      .menu>li>a{padding:12px 18px;display:block}
+      .menu{display:none;position:absolute;right:20px;top:64px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;flex-direction:column;gap:0;width:min(88vw,320px);box-shadow:0 10px 25px rgba(0,0,0,.12);padding:8px 0}
+      .menu > li > a{padding:12px 16px;display:block}
       .hamburger{display:inline-block}
+      .menu.open{display:flex}
     }
 
 /* Dropdown submenu（讓 UberEats 出現「下拉選單」而不是攤成一整排文字） */
