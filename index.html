@@ -186,6 +186,38 @@
       .hamburger{display:inline-block}
     }
 
+/* Dropdown submenu（讓 UberEats 出現「下拉選單」而不是攤成一整排文字） */
+.submenu{
+  display:none;
+  position:absolute;
+  top:100%;
+  left:0;
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:12px;
+  min-width:180px;
+  box-shadow:0 10px 25px rgba(0,0,0,.12);
+  padding:6px 0;
+  z-index:50;
+}
+.submenu a{
+  display:block;
+  padding:12px 16px;
+  text-decoration:none;
+  color:var(--text);
+  font-weight:600;
+}
+.submenu a:hover,
+.submenu a:focus{
+  background:var(--brand);
+  color:#fff;
+  outline:none;
+}
+.menu>li:hover .submenu{
+  display:block;
+}
+
+    
     .hero{
       padding:56px 0 40px;
       position:relative;
@@ -576,6 +608,7 @@
       const mount=document.getElementById('site-header');
       if(!mount) return;
       fetch('/delivery/shared/header.html')
+
         .then(res=>res.text())
         .then(html=>{ mount.innerHTML=html; })
         .catch(()=>{ mount.innerHTML='<header class="header"><div class="container nav"><a href="/Home/" class="brand-link"><span class="brand-logo">聯</span><span>餐聯顧問</span></a><button class="hamburger" type="button" aria-expanded="false">選單</button><ul id="mainmenu" class="menu" aria-label="主選單"><li><a href="#top">首頁</a></li><li><a href="https://foodalliance.github.io/delivery/">UberEats 申請</a></li><li><a href="#map">我們在做什麼</a></li><li><a href="#beliefs">我們相信</a></li><li><a href="#next">下一步</a></li></ul></div></header>'; });
