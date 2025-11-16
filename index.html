@@ -126,9 +126,7 @@
       line-height:1.7;
       -webkit-font-smoothing:antialiased;
     }
-    /* 調成和 /delivery/ 一樣的 1200px，讓 header 寬度一致 */
     .container{max-width:1200px;margin:0 auto;padding:0 20px}
-    .container-wide{max-width:1320px;margin:0 auto;padding:0 20px}
     .section{padding:72px 0}
     .section-tight{padding:48px 0}
     .section-header{margin-bottom:26px}
@@ -152,7 +150,7 @@
       font-size:15px;
     }
 
-    /* Header 基礎樣式（header.html 會用到同一組 class） */
+    /* Header 基礎樣式（跟 delivery 一致） */
     header.header{background:linear-gradient(180deg,#fff 0%,#f3f5f7 100%);border-bottom:1px solid #e5e7eb;position:sticky;top:0;z-index:100;backdrop-filter:saturate(180%) blur(6px)}
     .nav{display:flex;align-items:center;justify-content:space-between;height:64px;position:relative}
     .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-weight:800}
@@ -174,7 +172,7 @@
       .menu.open{display:flex}
     }
 
-    /* Dropdown submenu（讓 UberEats 出現「下拉選單」而不是攤成一整排文字） */
+    /* Dropdown submenu（UberEats 下拉） */
     .submenu{
       display:none;
       position:absolute;
@@ -222,7 +220,7 @@
     }
     .hero-inner{
       display:grid;
-      grid-template-columns:minmax(0,1.2fr) minmax(0,.9fr);
+      grid-template-columns:minmax(0,1.4fr) minmax(0,.9fr);
       gap:36px;
       align-items:center;
     }
@@ -252,15 +250,15 @@
     .hero-subtitle{
       font-size:15px;
       color:var(--muted);
-      max-width:620px;
+      max-width:640px;
       margin-bottom:18px;
     }
     .hero-quote{
       border-radius:16px;
-      background:rgba(255,255,255,.86);
-      padding:16px 18px;
+      background:rgba(255,255,255,.9);
+      padding:14px 16px;
       border:1px solid rgba(148,163,184,.4);
-      box-shadow:0 18px 50px rgba(15,23,42,.12);
+      box-shadow:0 16px 40px rgba(15,23,42,.12);
       font-size:14px;
     }
     .hero-quote strong{color:var(--brand-dark)}
@@ -269,69 +267,6 @@
       margin-right:4px;
       color:var(--brand-soft);
       vertical-align:text-top;
-    }
-    .hero-kpi{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px 18px;
-      align-items:center;
-      margin-top:14px;
-      font-size:13px;
-      color:var(--muted);
-    }
-    .hero-kpi-pill{
-      padding:5px 10px;
-      border-radius:999px;
-      border:1px solid rgba(148,163,184,.5);
-      background:rgba(255,255,255,.92);
-      font-weight:700;
-      color:var(--brand-dark);
-      font-size:12px;
-    }
-    .hero-cta{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:18px;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:6px;
-      text-decoration:none;
-      border-radius:999px;
-      font-weight:800;
-      font-size:14px;
-      padding:10px 18px;
-      border:2px solid透明;
-      cursor:pointer;
-      transition:transform .08s ease-out, box-shadow .12s ease-out, background .12s ease-out, color .12s ease-out, border-color .12s ease-out;
-      white-space:nowrap;
-    }
-    .btn-primary{
-      background:linear-gradient(135deg,var(--brand),var(--brand-soft));
-      color:#f9fafb;
-      box-shadow:0 12px 25px rgba(15,118,110,.45);
-    }
-    .btn-primary:hover{
-      transform:translateY(-1px);
-      box-shadow:0 18px 40px rgba(15,118,110,.6);
-    }
-    .btn-ghost{
-      background:rgba(255,255,255,.9);
-      color:var(--brand-dark);
-      border-color:rgba(148,163,184,.7);
-    }
-    .btn-ghost:hover{
-      background:#ecfeff;
-      border-color:var(--brand-soft);
-      transform:translateY(-1px);
-    }
-    .btn-pill-sub{
-      font-size:12px;
-      color:var(--muted);
-      margin-top:6px;
     }
     .hero-side-card{
       border-radius:22px;
@@ -374,7 +309,7 @@
       list-style:none;
       font-size:13px;
       display:grid;
-      gap:4px;
+      gap:6px;
       margin-bottom:10px;
     }
     .hero-side-list li::before{
@@ -383,32 +318,30 @@
       margin-right:4px;
     }
     .hero-side-footer{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
       font-size:11px;
       color:#a5b4fc;
     }
 
-    .grid-2{
-      display:grid;
-      grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);
-      gap:32px;
-      align-items:flex-start;
-    }
-    @media (max-width:900px){
-      .grid-2{grid-template-columns:1fr;gap:24px}
-    }
     .story-block{
       border-radius:22px;
-      background:rgba(255,255,255,.9);
+      background:rgba(255,255,255,.95);
       box-shadow:var(--shadow);
       padding:22px 22px 20px;
       border:1px solid rgba(203,213,225,.9);
+      max-width:860px;
+      margin:0 auto;
     }
-    .story-block h3{
+    .story-block + .story-block{
+      margin-top:20px;
+    }
+    .story-block h2{
       font-size:18px;
       font-weight:900;
+      margin-bottom:8px;
+    }
+    .story-block h3{
+      font-size:16px;
+      font-weight:800;
       margin-bottom:8px;
     }
     .story-block p{font-size:14px;color:#4b5563;margin-bottom:10px}
@@ -421,23 +354,33 @@
       text-transform:uppercase;
       margin-bottom:4px;
     }
-    .quote-big{
-      font-size:16px;
-      font-weight:800;
-      color:var(--brand-dark);
-      margin-bottom:6px;
+
+    .belief-list{
+      list-style:none;
+      display:grid;
+      gap:8px;
+      margin-top:8px;
     }
-    .quote-highlight{
-      border-left:3px solid var(--brand-soft);
-      padding-left:10px;
-      margin-top:6px;
-      font-size:14px;
+    .belief-list li{
+      font-size:13px;
       color:#374151;
+      background:rgba(240,253,250,.9);
+      border-radius:999px;
+      padding:7px 14px;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      border:1px solid rgba(45,212,191,.5);
+    }
+    .belief-dot{
+      width:7px;height:7px;border-radius:999px;
+      background:linear-gradient(135deg,#22c55e,#0ea5e9);
+      flex-shrink:0;
     }
 
-    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
     .card{
-      background:rgba(255,255,255,.94);
+      background:rgba(255,255,255,.96);
       border-radius:18px;
       padding:18px 18px 16px;
       box-shadow:0 10px 30px rgba(148,163,184,.35);
@@ -461,121 +404,40 @@
       margin-bottom:4px;
       font-weight:700;
     }
-    .card-badge{
+
+    .btn{
       display:inline-flex;
       align-items:center;
-      padding:3px 8px;
+      justify-content:center;
+      gap:6px;
+      text-decoration:none;
       border-radius:999px;
-      font-size:11px;
-      background:#ecfdf5;
-      color:#166534;
-      margin-bottom:4px;
-    }
-
-    .timeline{
-      position:relative;
-      margin-top:16px;
-    }
-    .timeline::before{
-      content:"";
-      position:absolute;
-      top:4px;bottom:4px;left:10px;
-      width:2px;
-      background:linear-gradient(to bottom,#22c55e,#0ea5e9);
-      opacity:.7;
-    }
-    .timeline-item{
-      position:relative;
-      padding-left:26px;
-      margin-bottom:14px;
-    }
-    .timeline-dot{
-      position:absolute;
-      left:4px;top:5px;
-      width:12px;height:12px;
-      border-radius:999px;
-      background:#fff;
-      border:2px solid #22c55e;
-      box-shadow:0 0 0 3px rgba(34,197,94,.2);
-    }
-    .timeline-title{
-      font-size:14px;
       font-weight:800;
-      margin-bottom:2px;
+      font-size:14px;
+      padding:10px 18px;
+      border:2px solid transparent;
+      cursor:pointer;
+      transition:transform .08s ease-out, box-shadow .12s ease-out, background .12s ease-out, color .12s ease-out, border-color .12s ease-out;
+      white-space:nowrap;
     }
-    .timeline-text{
-      font-size:13px;
-      color:#4b5563;
+    .btn-primary{
+      background:linear-gradient(135deg,var(--brand),var(--brand-soft));
+      color:#f9fafb;
+      box-shadow:0 12px 25px rgba(15,118,110,.45);
     }
-
-    .belief-list{
-      list-style:none;
-      display:grid;
-      gap:10px;
-      margin-top:8px;
+    .btn-primary:hover{
+      transform:translateY(-1px);
+      box-shadow:0 18px 40px rgba(15,118,110,.6);
     }
-    .belief-list li{
-      font-size:13px;
-      color:#374151;
-      background:rgba(240,253,250,.9);
-      border-radius:999px;
-      padding:7px 14px;
-      display:flex;
-      align-items:center;
-      gap:8px;
-      border:1px solid rgba(45,212,191,.5);
+    .btn-ghost{
+      background:rgba(255,255,255,.9);
+      color:var(--brand-dark);
+      border-color:rgba(148,163,184,.7);
     }
-    .belief-dot{
-      width:7px;height:7px;border-radius:999px;
-      background:linear-gradient(135deg,#22c55e,#0ea5e9);
-      flex-shrink:0;
-    }
-
-    .cta-band{
-      border-radius:22px;
-      padding:18px 20px;
-      background:linear-gradient(120deg,#022c22,#064e3b);
-      color:#e5e7eb;
-      display:flex;
-      flex-wrap:wrap;
-      align-items:center;
-      justify-content:space-between;
-      gap:14px;
-      box-shadow:0 18px 50px rgba(15,23,42,.8);
-    }
-    .cta-band h2{
-      font-size:18px;
-      font-weight:900;
-      margin-bottom:4px;
-    }
-    .cta-band p{
-      font-size:13px;
-      color:#cbd5f5;
-    }
-    .cta-band-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-    }
-    .btn-on-dark{
-      background:#f9fafb;
-      color:#022c22;
-      border-color:transparent;
-      box-shadow:0 10px 26px rgba(15,23,42,.8);
-    }
-    .btn-on-dark:hover{
+    .btn-ghost:hover{
       background:#ecfeff;
+      border-color:var(--brand-soft);
       transform:translateY(-1px);
-    }
-    .btn-outline-on-dark{
-      background:transparent;
-      color:#e5e7eb;
-      border-color:rgba(148,163,184,.8);
-    }
-    .btn-outline-on-dark:hover{
-      background:rgba(15,23,42,.3);
-      transform:translateY(-1px);
-      border-color:#bfdbfe;
     }
 
     .footer{
@@ -586,8 +448,6 @@
       color:#6b7280;
     }
     .footer p{margin:4px 0}
-
-    #story,#map,#how,#beliefs,#next{content-visibility:auto;contain-intrinsic-size:1000px 800px}
   </style>
 
   <script>
@@ -597,7 +457,7 @@
       fetch('/delivery/shared/header.html')
         .then(res=>res.text())
         .then(html=>{ mount.innerHTML=html; })
-        .catch(()=>{ mount.innerHTML='<header class="header"><div class="container nav"><a href="/Home/" class="brand-link"><span class="brand-logo">聯</span><span>餐聯顧問</span></a><button class="hamburger" type="button" aria-expanded="false">選單</button><ul id="mainmenu" class="menu" aria-label="主選單"><li><a href="#top">首頁</a></li><li><a href="https://foodalliance.github.io/delivery/">UberEats 申請</a></li><li><a href="#map">我們在做什麼</a></li><li><a href="#beliefs">我們相信</a></li><li><a href="#next">下一步</a></li></ul></div></header>'; });
+        .catch(()=>{ mount.innerHTML='<header class="header"><div class="container nav"><a href="/Home/" class="brand-link"><span class="brand-logo">聯</span><span>餐聯顧問</span></a><button class="hamburger" type="button" aria-expanded="false">選單</button><ul id="mainmenu" class="menu" aria-label="主選單"><li><a href="#top">首頁</a></li><li><a href="https://foodalliance.github.io/delivery/">UberEats 申請</a></li><li><a href="#about">我們在做什麼</a></li><li><a href="#beliefs">我們相信</a></li><li><a href="#next">下一步</a></li></ul></div></header>'; });
     }
     document.addEventListener('DOMContentLoaded',function(){
       initializeHeader();
@@ -643,38 +503,20 @@
   <!-- 共用 Header slot -->
   <div id="site-header" role="navigation" aria-label="主選單"></div>
 
-  <!-- Hero -->
   <main>
+    <!-- Hero：主軸＋引言（保留左右，但內容簡短） -->
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-inner">
         <div>
           <div class="hero-eyebrow">Information for F&amp;B People</div>
           <h1 id="hero-title">
-            在資訊爆炸的時代，<br>
             讓餐飲人，<span class="highlight">不再是資訊裡最後知道的那一群。</span>
           </h1>
           <p class="hero-subtitle">
-            餐飲人每天已經要為備料、出餐、排班、顧客服務燒腦，卻還得同時面對外送平台方案、聯名活動、政府補助、產業政策與新工具。<br>
-            <strong>餐聯存在的理由，就是幫你把這些零散又耗神的資訊，變成一張看得懂、用得上的地圖。</strong>
+            在這個資訊不是「很多」，而是「爆炸」的時代，餐飲人每天已經要為備料、出餐、排班、顧客服務燒腦，卻還得同時面對各種外送平台方案、聯名活動、政府補助、產業政策與新工具。
           </p>
           <div class="hero-quote">
-            <span class="hero-quote-mark">「</span>
             如果只靠自己一間店、自己一雙眼，很容易就在忙碌之間，錯過本來屬於你的機會與資源。
-          </div>
-          <div class="hero-kpi">
-            <span class="hero-kpi-pill">目前專注：台灣餐飲與外送產業</span>
-            <span>外送平台、政策補助、工具與合作機會，一站整理。</span>
-          </div>
-          <div class="hero-cta" role="group" aria-label="主要行動">
-            <a class="btn btn-primary" href="https://lin.ee/BhAYZtu" target="_blank" rel="noopener" data-cta="hero_fnb">
-              我是在現場打拚的餐飲人
-            </a>
-            <a class="btn btn-ghost" href="https://lin.ee/BhAYZtu" target="_blank" rel="noopener" data-cta="hero_partner">
-              我是想支持餐飲產業的品牌 / 夥伴
-            </a>
-          </div>
-          <div class="btn-pill-sub">
-            * 留下店名或公司名稱，我們會在適合的合作、資源或專案成熟時，優先跟你報告。
           </div>
         </div>
 
@@ -682,214 +524,93 @@
           <div class="hero-side-tag">OUR ROLE</div>
           <div class="hero-side-title">與其說是一間公司，<br>不如說是一個資訊節點 / 能量中繼站。</div>
           <p class="hero-side-text">
-            我們不急著替自己下華麗的標籤。餐聯比較像是站在你身後的那個人——
-            幫你悄悄接住那些複雜又耗神的資訊、文件與選項。
+            我們不急著替自己下什麼華麗的標籤。餐聯比較像是站在你身後的那個人——幫你悄悄接住那些複雜又耗神的資訊、文件與選項。
           </p>
           <ul class="hero-side-list">
             <li>默默替你蒐集對餐飲現場有幫助的消息、工具、優惠與合作機會</li>
             <li>讓「需要的人」，在「對的時間」，看見「對的資訊」</li>
-            <li>也讓願意投資、支持餐飲產業的品牌與夥伴，有一個可以對話、曝光、真實接觸第一線餐飲人的入口</li>
+            <li>讓願意投資、支持餐飲產業的品牌與夥伴，有一個可以真實接觸第一線餐飲人的入口</li>
           </ul>
           <div class="hero-side-footer">
-            <span>只要對餐飲現場有幫助，就是我們前進的方向。</span>
+            只要對餐飲現場有幫助，就是我們前進的方向。
           </div>
         </aside>
       </div>
     </section>
 
-    <section id="story" class="section" aria-labelledby="story-title">
-      <div class="container-wide grid-2">
-        <div>
-          <header class="section-header">
-            <div class="section-eyebrow">Why We Exist</div>
-            <h2 id="story-title" class="section-title">餐聯存在的理由：<br>讓餐飲人，不再在資訊裡落後。</h2>
-            <p class="section-lead">
-              資訊不是「很多」，而是已經「爆炸」。真正在第一線扛營運的人，卻常常是最後一個知道新政策、新補助、新工具的一群。
-            </p>
-          </header>
-
-          <article class="story-block" aria-label="資訊爆炸下的餐飲日常">
-            <div class="story-label">餐飲人的日常現場</div>
-            <p>
-              在這個資訊不是「很多」，而是「爆炸」的時代，餐飲人每天已經要為備料、出餐、排班、顧客服務燒腦，
-              卻還得同時面對各種外送平台方案、聯名活動、政府補助、產業政策與新工具。
-            </p>
-            <p>
-              如果只靠自己一間店、自己一雙眼，很容易就在忙碌之間，錯過本來屬於你的機會與資源。
-            </p>
-            <p class="quote-highlight">
-              <strong>所以，餐聯存在的理由，就是：讓餐飲人，不再是資訊裡最晚知道的那一群。</strong>
-            </p>
-          </article>
-        </div>
-
-        <div>
-          <article class="story-block" aria-label="我們想做的事情">
-            <div class="story-label">不只是整理資料</div>
-            <h3>我們想做的，是一套「看得懂、用得上」的資訊基礎建設。</h3>
-            <p>
-              我們想做的，不只是「整理資料」，而是替整個餐飲產業，搭一套看得懂、用得上的資訊基礎建設——
-              把零散的政策、補助、優惠、合作機會，變成一張你打得開、看得懂、跟得上的地圖。
-            </p>
-            <p class="quote-big">這張地圖，不是要替你決定要往哪裡走，而是讓你<strong>真的有選擇權</strong>。</p>
-            <p>
-              當資訊變得清楚、透明，餐飲人就能把最珍貴的時間與心力，重新放回真正重要的地方：
-              料理本身、一起打拚的團隊，以及每一位走進店裡的客人。
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="map" class="section-tight" aria-labelledby="map-title">
+    <!-- 上方內容：全部改成單欄直排 -->
+    <section id="about" class="section" aria-labelledby="about-title">
       <div class="container">
-        <header class="section-header">
-          <div class="section-eyebrow">What We Build</div>
-          <h2 id="map-title" class="section-title">把零散的政策、補助、優惠與機會，變成一張「餐飲人看得懂的地圖」。</h2>
+        <div class="section-header">
+          <div class="section-eyebrow">Why We Exist</div>
+          <h2 id="about-title" class="section-title">關於我們。</h2>
           <p class="section-lead">
-            我們把自己當成一個資訊節點 / 能量中繼站，介於「願意投資餐飲產業的人」和「每天站在現場的餐飲人」之間。
+            關於我們，就是：讓餐飲人，不再是資訊裡最晚知道的那一群。
           </p>
-        </header>
-
-        <div class="cards" aria-label="餐聯正在做的三件事">
-          <article class="card">
-            <div class="card-tag">Collect</div>
-            <h3>默默替你蒐集「有用」而不是「好看」的資訊</h3>
-            <p>
-              我們持續關注外送平台方案、聯名活動、政府補助、產業政策、數位工具與設備整合，只留下對餐飲現場真的有幫助的那一部分。
-            </p>
-            <p class="card-badge">少一點雜訊，多一點重點。</p>
-          </article>
-
-          <article class="card">
-            <div class="card-tag">Translate</div>
-            <h3>把艱澀規則，翻成現場聽得懂的人話</h3>
-            <p>
-              政策條文、方案條款、平台規則，往往寫得又長又硬。
-              我們會用餐飲人聽得懂的角度，拆解成「這跟你有什麼關係」「你需要注意什麼」。
-            </p>
-            <p class="card-badge">讓資訊真正進得了廚房。</p>
-          </article>
-
-          <article class="card">
-            <div class="card-tag">Connect</div>
-            <h3>讓需要的人，在對的時間，看見對的資訊</h3>
-            <p>
-              不只是丟一堆連結，而是思考：<br>
-              哪些資源，對哪一種階段、哪一種類型的店家，特別重要？
-            </p>
-            <p>
-              同時，也幫願意投資、支持餐飲產業的品牌與夥伴，找到可以真實接觸現場的入口。
-            </p>
-            <p class="card-badge">資訊，是雙向流動的。</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="how" class="section" aria-labelledby="how-title">
-      <div class="container-wide grid-2">
-        <div>
-          <header class="section-header">
-            <div class="section-eyebrow">How It Works</div>
-            <h2 id="how-title" class="section-title">我們不是要包辦你的決定，而是替你打底。</h2>
-            <p class="section-lead">
-              餐聯想做的，是站在你身後，幫你悄悄接住那些複雜又耗神的資訊、文件與選項，
-              讓站在前線的你，可以多一點餘裕、多一點選擇權，而不是一直被選擇。
-            </p>
-          </header>
-
-          <div class="timeline" aria-label="餐聯的運作方式">
-            <div class="timeline-item">
-              <div class="timeline-dot" aria-hidden="true"></div>
-              <div class="timeline-title">1. 先從「傾聽現場」開始</div>
-              <div class="timeline-text">
-                我們先聽餐飲人真正卡關的是什麼：是人力？租金？食材？還是平台與政策？
-                然後才決定要收哪些資訊、怎麼整理。
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot" aria-hidden="true"></div>
-              <div class="timeline-title">2. 再把資訊整理成「地圖」，而不是「資料庫」</div>
-              <div class="timeline-text">
-                資訊庫可以很大，但對忙碌的餐飲人來說，最重要的是：
-                <strong>下一步該往哪裡走？有沒有我應該把握的機會？</strong>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot" aria-hidden="true"></div>
-              <div class="timeline-title">3. 讓合適的資源，找到合適的人</div>
-              <div class="timeline-text">
-                我們把資訊對齊到「情境」：剛起步的小店、準備展店的品牌、想整合系統的老店……
-                讓每一個階段，都看得見自己能用得上的資源。
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-dot" aria-hidden="true"></div>
-              <div class="timeline-title">4. 一起回饋、一起長大</div>
-              <div class="timeline-text">
-                我們不急著把答案說滿。餐聯願意跟著整個產業一起成長——
-                一塊一塊，把屬於餐飲人的資源版圖，在這裡，慢慢補上。
-              </div>
-            </div>
-          </div>
         </div>
 
-        <aside class="story-block" aria-label="給餐飲人的空間與餘裕">
-          <h3>把最珍貴的時間與心力，還給餐飲人。</h3>
+        <!-- 區塊 1：資訊爆炸 & 地圖 -->
+        <div class="story-block">
+          <div class="story-label">現場的日常</div>
+          <p>
+            餐飲人每天要為備料、出餐、排班、顧客服務燒腦，卻還得同時面對各種外送平台方案、聯名活動、政府補助、產業政策與新工具。
+          </p>
+          <p>
+            如果只靠自己一間店、自己一雙眼，很容易就在忙碌之間，錯過本來屬於你的機會與資源。
+          </p>
+          <p>
+            我們想做的，不只是「整理資料」，而是替整個餐飲產業，搭一套看得懂、用得上的資訊基礎建設——
+            把零散的政策、補助、優惠、合作機會，變成一張你打得開、看得懂、跟得上的地圖。
+          </p>
+        </div>
+
+        <!-- 區塊 2：資訊節點 / 能量中繼站 -->
+        <div class="story-block">
+          <div class="story-label">Information Node</div>
+          <h3>與其說是一間公司，我們更把自己當成一個資訊節點 / 能量中繼站。</h3>
+          <p>我們不急著替自己下什麼華麗的標籤，而是把重心放在：到底能不能真的幫到餐飲現場。</p>
+          <ul class="belief-list" aria-label="餐聯在做的三件事">
+            <li><span class="belief-dot" aria-hidden="true"></span>默默替你蒐集對餐飲現場有幫助的消息、工具、優惠與合作機會</li>
+            <li><span class="belief-dot" aria-hidden="true"></span>讓「需要的人」，在「對的時間」，看見「對的資訊」</li>
+            <li><span class="belief-dot" aria-hidden="true"></span>讓願意投資、支持餐飲產業的品牌與夥伴，有一個可以對話、曝光、真實接觸第一線餐飲人的入口</li>
+          </ul>
+        </div>
+
+        <!-- 區塊 3：我們相信什麼 -->
+        <div id="beliefs" class="story-block">
+          <div class="story-label">Our Belief</div>
+          <h3>如果說餐飲，始終是一門關於「人」的事——</h3>
           <p>
             我們相信：當資訊更透明、選擇更清楚，小店也能擁有大集團等級的情報與後盾。
           </p>
           <p>
-            這時候，餐飲人就可以把最珍貴的時間與心力，重新放回真正重要的地方——
+            這時候，餐飲人就可以把最珍貴的時間與心力，重新放回真正重要的地方——料理本身、一起打拚的團隊，以及每一位走進店裡的客人。
           </p>
-          <ul class="belief-list" aria-label="餐聯相信的三件事">
-            <li><span class="belief-dot" aria-hidden="true"></span>料理本身：那一道你最有自信、最代表你們的菜。</li>
-            <li><span class="belief-dot" aria-hidden="true"></span>一起打拚的團隊：那些每天一起收店、一起扛班的人。</li>
-            <li><span class="belief-dot" aria-hidden="true"></span>每一位走進店裡的客人：願意把時間交給你們的那群人。</li>
-          </ul>
-          <p style="font-size:12px;color:#6b7280;margin-top:10px;">
-            如果說餐飲，始終是一門關於「人」的事，<br>
-            那餐聯想做的，就是好好站在你身後。
+          <p>
+            餐聯想做的，就是站在你身後，幫你悄悄接住那些複雜又耗神的資訊、文件與選項，
+            讓站在前線的你，可以多一點餘裕、多一點選擇權，而不是一直被選擇。
           </p>
-        </aside>
+          <p>
+            只要對餐飲現場有幫助，就是我們前進的方向。至於未來還會發展出哪些合作、服務與計畫？我們不急著把答案說滿，
+            而是更願意跟著整個產業一起成長——一塊一塊，把屬於餐飲人的資源版圖，在這裡，慢慢補上。
+          </p>
+        </div>
       </div>
     </section>
 
-    <section id="beliefs" class="section-tight" aria-labelledby="beliefs-title">
+    <!-- 最下方：UberEats / 異業合作，一左一右 -->
+    <section id="next" class="section-tight" aria-labelledby="next-title">
       <div class="container">
-        <header class="section-header">
-          <div class="section-eyebrow">Our Belief</div>
-          <h2 id="beliefs-title" class="section-title">只要對餐飲現場有幫助，就是我們前進的方向。</h2>
+        <div class="section-header">
+          <div class="section-eyebrow">Next Step</div>
+          <h2 id="next-title" class="section-title">想先從哪裡開始？</h2>
           <p class="section-lead">
-            至於未來還會發展出哪些合作、服務與計畫？我們不急著把答案說滿。<br>
-            我們更願意跟著整個產業一起成長，一塊一塊，把屬於餐飲人的資源版圖，在這裡，慢慢補上。
+            不論你是正在備料的餐飲人，還是想支持餐飲產業的品牌與夥伴，都可以先從這裡出發。
           </p>
-        </header>
-      </div>
-    </section>
-
-    <section id="next" class="section" aria-labelledby="next-title">
-      <div class="container">
-        <div class="cta-band" aria-label="下一步行動">
-          <div>
-            <h2 id="next-title">想先從哪裡開始？</h2>
-            <p>
-              不論你是正在備料的餐飲人，還是想支持餐飲產業的品牌與夥伴，
-              都歡迎先來打個招呼，讓我們知道「你是誰、現在在面對什麼」。
-            </p>
-          </div>
-          <div class="cta-band-actions" role="group" aria-label="行動按鈕">
-            <a class="btn btn-on-dark" href="https://lin.ee/BhAYZtu" target="_blank" rel="noopener" data-cta="next_line_fnb">
-              加入 LINE：我是餐飲人
-            </a>
-            <a class="btn btn-outline-on-dark" href="https://lin.ee/BhAYZtu" target="_blank" rel="noopener" data-cta="next_line_partner">
-              加入 LINE：我是品牌 / 夥伴
-            </a>
-          </div>
         </div>
 
-        <div style="margin-top:22px" class="cards" aria-label="目前可以使用的入口">
+        <div class="cards" aria-label="下一步行動">
+          <!-- 左：加入 UberEats -->
           <article class="card">
             <div class="card-tag">For 餐飲人</div>
             <h3>想了解外送平台上線？</h3>
@@ -902,14 +623,15 @@
             </a>
           </article>
 
+          <!-- 右：異業合作 -->
           <article class="card">
             <div class="card-tag">For 品牌 / 夥伴</div>
             <h3>想和餐飲產業合作或投入資源？</h3>
             <p>
               如果你是設備商、金流系統、品牌方、設計或行銷團隊，想要更真實地接觸餐飲現場，
-              歡迎透過 LINE 跟我們說明你的方向，我們一起討論可能的合作與實驗。
+              歡迎透過表單跟我們說明你的方向，我們一起討論可能的合作與實驗。
             </p>
-            <a class="btn btn-ghost" href="https://lin.ee/BhAYZtu" target="_blank" rel="noopener" data-cta="next_partner_contact">
+            <a class="btn btn-ghost" href="https://docs.google.com/forms/d/e/1FAIpQLSd20-87whz1JpbqiurlwyHC1Gt5tX1wW39G7FXX43NmnC_j9w/viewform" target="_blank" rel="noopener" data-cta="next_partner_contact">
               跟餐聯聊聊合作可能
             </a>
           </article>
@@ -920,10 +642,7 @@
 
   <footer class="footer" role="contentinfo">
     <div class="container">
-      <p><strong>餐聯顧問</strong>｜餐飲產業的資訊節點與能量中繼站。</p>
-      <p>我們協助整理與轉譯外送平台方案、聯名活動、政府補助、產業政策與新工具，讓餐飲人可以更快看懂、跟得上。</p>
-      <p>目前服務重點：台灣餐飲與外送產業。</p>
-      <p>聯絡方式：請加入 LINE 官方帳號並留言店名或公司名稱（<a href="https://lin.ee/BhAYZtu" target="_blank" rel="noopener">https://lin.ee/BhAYZtu</a>）。</p>
+      <p><strong>餐聯顧問</strong>｜餐飲產業的資訊節點與能量中繼站。　　　　　　　　　　　　　　　　　　　　　　　　Powered by 餐聯設備顧問企業社</p>
     </div>
   </footer>
 </body>
